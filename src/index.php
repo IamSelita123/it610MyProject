@@ -1,29 +1,29 @@
 <?php
 
-echo "Hello from the docker yooooo container";
+echo "Hello from the docker container";
 
-$mysqli = new mysqli("db", "root", "example", "company1");
+$mysqli = new mysqli("db", "root", "Alicia19", "Network");
 
-$sql = "INSERT INTO users (name, fav_color) VALUES('Lil Sneazy', 'Yellow')";
+$sql = "INSERT INTO device (name, device_type) VALUES('Palisades1', 'Switch')";
 $result = $mysqli->query($sql);
-$sql = "INSERT INTO users (name, fav_color) VALUES('Nick Jonas', 'Brown')";
+$sql = "INSERT INTO device (name, device_type) VALUES('Clifton2', 'Firewall')";
 $result = $mysqli->query($sql);
-$sql = "INSERT INTO users (name, fav_color) VALUES('Maroon 5', 'Maroon')";
+$sql = "INSERT INTO device (name, device_type) VALUES('Paterson2', 'F5')";
 $result = $mysqli->query($sql);
-$sql = "INSERT INTO users (name, fav_color) VALUES('Tommy Baker', '043A2B')";
+$sql = "INSERT INTO device (name, device_type) VALUES('Passaic1', 'Router')";
 $result = $mysqli->query($sql);
 
 
-$sql = 'SELECT * FROM users';
+$sql = 'SELECT * FROM device';
 
 if ($result = $mysqli->query($sql)) {
     while ($data = $result->fetch_object()) {
-        $users[] = $data;
+        $device[] = $data;
     }
 }
 
-foreach ($users as $user) {
+foreach ($devices as $device) {
     echo "<br>";
-    echo $user->name . " " . $user->fav_color;
+    echo $device->name . " " . $device_type->device_type;
     echo "<br>";
 }
